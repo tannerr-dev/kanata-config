@@ -1,0 +1,54 @@
+;; defsrc is still necessary
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  caps a s d f g h j k l ; spc o p m n
+)
+(defvar
+  tap-time 150
+  hold-time 250
+)
+
+(defalias
+  caps (tap-hold $tap-time 500 esc caps)
+  caps1 (tap-hold $tap-time 500 tab caps)
+  a (tap-hold $tap-time $hold-time a lctl)
+  s (tap-hold $tap-time $hold-time s lmet)
+  d (tap-hold $tap-time $hold-time d rsft)
+  f (tap-hold $tap-time $hold-time f lalt)
+  g (tap-hold $tap-time $hold-time g ret)
+  h (tap-hold $tap-time $hold-time h bspc)
+  j (tap-hold $tap-time $hold-time j ralt)
+  k (tap-hold $tap-time $hold-time k rsft)
+  l (tap-hold $tap-time $hold-time l lmet)
+  ; (tap-hold $tap-time $hold-time ; rctl)
+
+  spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
+
+  a1 (tap-hold $tap-time $hold-time 1 lctl)
+  s1 (tap-hold $tap-time $hold-time 2 lmet)
+  d1 (tap-hold $tap-time $hold-time 3 rsft)
+  f1 (tap-hold $tap-time $hold-time 4 lalt)
+  g1 (tap-hold $tap-time $hold-time 5 ret)
+  h1 (tap-hold $tap-time $hold-time bspc bspc)
+  j1 (tap-hold $tap-time $hold-time down lalt) 
+  k1 (tap-hold $tap-time $hold-time up lsft)
+  l1 (tap-hold $tap-time $hold-time lbrc 9)
+  ;1 (tap-hold $tap-time $hold-time rbrc 0)
+  o (tap-hold $tap-time $hold-time o min)
+  p (tap-hold $tap-time $hold-time p eql)
+  o1 (tap-hold $tap-time $hold-time min min)
+  p1 (tap-hold $tap-time $hold-time eql eql)
+  m (tap-hold $tap-time $hold-time m c)
+  n (tap-hold $tap-time $hold-time n v)
+)
+
+(deflayer base
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n
+)
+
+(deflayer $layer-one
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m @n
+)
