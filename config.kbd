@@ -24,6 +24,8 @@
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $hold-time l lmet)
   ; (tap-hold $tap-time $hold-time ; rctl)
+  m (tap-hold $tap-time $hold-time m c)
+  n (tap-hold $tap-time $hold-time n v)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
@@ -41,8 +43,8 @@
   p (tap-hold $tap-time $hold-time p eql)
   o1 (tap-hold $tap-time $hold-time min min)
   p1 (tap-hold $tap-time $hold-time eql eql)
-  m (tap-hold $tap-time $hold-time m c)
-  n (tap-hold $tap-time $hold-time n v)
+  m1 (tap-hold $tap-time $hold-time m c)
+  n1 (tap-hold $tap-time $hold-time ret v)
 )
 
 (deflayer base
@@ -50,5 +52,5 @@
 )
 
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m @n
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1
 )
