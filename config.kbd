@@ -17,7 +17,7 @@
   a (tap-hold $tap-time $hold-time a lctl)
   s (tap-hold $tap-time $hold-time s lmet)
   d (tap-hold $tap-time $hold-time d rsft)
-  f (tap-hold $tap-time $hold-time f lalt)
+  f (tap-hold $tap-time $hold-time f tab)
   g (tap-hold $tap-time $hold-time g ret)
   h (tap-hold $tap-time $hold-time h bspc)
   j (tap-hold $tap-time $hold-time j ralt)
