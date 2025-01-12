@@ -13,7 +13,6 @@
 
 (defalias
   caps (tap-hold $tap-time 500 esc caps)
-  caps1 (tap-hold $tap-time 500 tab caps)
   a (tap-hold $tap-time $hold-time a lctl)
   s (tap-hold $tap-time $hold-time s lmet)
   d (tap-hold $tap-time $hold-time d rsft)
@@ -34,6 +33,7 @@
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
+  caps1 (tap-hold $tap-time 500 tab caps)
   a1 (tap-hold $tap-time $hold-time 1 lctl)
   s1 (tap-hold $tap-time $hold-time 2 lmet)
   d1 (tap-hold $tap-time $hold-time 3 rsft)
