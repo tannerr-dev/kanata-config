@@ -45,7 +45,7 @@
   l1 (tap-hold $tap-time $hold-time lbrc 9)
   ;1 (tap-hold $tap-time $hold-time rbrc 0)
   m1 (tap-hold $tap-time $hold-time m c)
-  n1 (tap-hold $tap-time $hold-time del v)
+  n1 (tap-hold $tap-time $hold-time del del)
   o1 (tap-hold $tap-time $hold-time min min)
   p1 (tap-hold $tap-time $hold-time eql eql)
   r1 (tap-hold $tap-time $hold-time r esc)
