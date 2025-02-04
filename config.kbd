@@ -4,7 +4,7 @@
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t e
+  caps a s d f g h j k l ; spc o p m n r u y t
 )
 (defvar
   tap-time 150
@@ -31,7 +31,6 @@
   u (tap-hold $tap-time $hold-time u end)
   y (tap-hold $tap-time $hold-time y home)
   t (tap-hold $tap-time $hold-time t esc)
-  e (tap-hold $tap-time $hold-time e lctl)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
@@ -54,13 +53,12 @@
   u1 (tap-hold $tap-time $hold-time end end)
   y1 (tap-hold $tap-time $hold-time home home)
   t1 (tap-hold $tap-time $hold-time esc esc)
-  e1 (tap-hold $tap-time $hold-time lctl lctl)
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @e
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t
 )
 
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @e1
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1
 )
