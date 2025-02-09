@@ -4,7 +4,7 @@
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t
+  caps a s d f g h j k l ; spc o p m n r u y t b
 )
 (defvar
   tap-time 150
