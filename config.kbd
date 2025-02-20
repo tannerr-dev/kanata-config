@@ -4,63 +4,66 @@
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y e b
+  caps a s d f g h j k l ; spc o p m n r u y t b i
 )
 (defvar
   tap-time 150
   hold-time 200
+  longer 250
 )
 
 (defalias
-  caps (tap-hold $tap-time 500 esc caps)
+  caps (tap-hold $tap-time 500 esc esc)
   a (tap-hold $tap-time $hold-time a lctl)
-  s (tap-hold $tap-time $hold-time s lmet)
+  s (tap-hold $tap-time $longer s lmet)
   d (tap-hold $tap-time $hold-time d rsft)
   f (tap-hold $tap-time $hold-time f tab)
   g (tap-hold $tap-time $hold-time g ret)
   h (tap-hold $tap-time $hold-time h esc)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $hold-time l lmet)
+  l (tap-hold $tap-time $longer l lmet)
   ; (tap-hold $tap-time $hold-time ; rctl)
   m (tap-hold $tap-time $hold-time m c)
   n (tap-hold $tap-time $hold-time n v)
   o (tap-hold $tap-time $hold-time o min)
   p (tap-hold $tap-time $hold-time p eql)
-  r (tap-hold $tap-time $hold-time r esc)
-  u (tap-hold $tap-time $hold-time u end)
-  y (tap-hold $tap-time $hold-time y home)
-  e (tap-hold $tap-time $hold-time e esc)
+  r (tap-hold $tap-time $hold-time r r)
+  u (tap-hold $tap-time $hold-time u lbrc)
+  i (tap-hold $tap-time $hold-time i rbrc)
+  y (tap-hold $tap-time $hold-time y end)
+  t (tap-hold $tap-time $hold-time t home)
   b (tap-hold $tap-time $hold-time b bspc)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
-  caps1 (tap-hold $tap-time 500 tab caps)
+  caps1 (tap-hold $tap-time 500 bspc bspc )
   a1 (tap-hold $tap-time $hold-time 1 lctl)
-  s1 (tap-hold $tap-time $hold-time 2 lmet)
+  s1 (tap-hold $tap-time $longer 2 lmet)
   d1 (tap-hold $tap-time $hold-time 3 rsft)
   f1 (tap-hold $tap-time $hold-time tab lalt)
   g1 (tap-hold $tap-time $hold-time ret ret)
   h1 (tap-hold $tap-time $hold-time left left)
   j1 (tap-hold $tap-time $hold-time down lalt) 
   k1 (tap-hold $tap-time $hold-time up lsft)
-  l1 (tap-hold $tap-time $hold-time rght lbrc)
+  l1 (tap-hold $tap-time $longer rght lbrc)
   ;1 (tap-hold $tap-time $hold-time ; rbrc)
   m1 (tap-hold $tap-time $hold-time m c)
   n1 (tap-hold $tap-time $hold-time del del)
   o1 (tap-hold $tap-time $hold-time min min)
   p1 (tap-hold $tap-time $hold-time eql eql)
-  r1 (tap-hold $tap-time $hold-time r esc)
+  r1 (tap-hold $tap-time $hold-time r r)
   u1 (tap-hold $tap-time $hold-time end end)
+  i1 (tap-hold $tap-time $hold-time rbrc rbrc)
   y1 (tap-hold $tap-time $hold-time home home)
   e1 (tap-hold $tap-time $hold-time esc esc)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @e @b
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i
 )
 
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @e1 @b1
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1
 )
