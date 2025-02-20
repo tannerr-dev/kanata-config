@@ -53,7 +53,7 @@
   o1 (tap-hold $tap-time $hold-time min min)
   p1 (tap-hold $tap-time $hold-time eql eql)
   r1 (tap-hold $tap-time $hold-time r r)
-  u1 (tap-hold $tap-time $hold-time end end)
+  u1 (tap-hold $tap-time $hold-time lbrc lbrc)
   i1 (tap-hold $tap-time $hold-time rbrc rbrc)
   y1 (tap-hold $tap-time $hold-time home home)
   e1 (tap-hold $tap-time $hold-time esc esc)
