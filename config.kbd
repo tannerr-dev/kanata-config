@@ -8,7 +8,7 @@
 )
 (defvar
   tap-time 150
-  hold-time 200
+  hold-time 220
   longer 250
 )
 
@@ -59,7 +59,6 @@
   t1 (tap-hold $tap-time $hold-time home home)
   e1 (tap-hold $tap-time $hold-time esc esc)
   y1 (tap-hold $tap-time $hold-time end end)
-  e1 (tap-hold $tap-time $hold-time esc esc)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
 )
 
