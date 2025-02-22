@@ -8,7 +8,7 @@
 )
 (defvar
   tap-time 150
-  hold-time 220
+  hold-time 200
   longer 250
 )
 
@@ -31,9 +31,9 @@
   r (tap-hold $tap-time $hold-time r r)
   u (tap-hold $tap-time $hold-time u lbrc)
   i (tap-hold $tap-time $hold-time i rbrc)
-  t (tap-hold $tap-time $hold-time t home)
+  t (tap-hold $tap-time $longer t home)
   e (tap-hold $tap-time $hold-time e esc)
-  y (tap-hold $tap-time $hold-time y end)
+  y (tap-hold $tap-time $longer y end)
   b (tap-hold $tap-time $hold-time b bspc)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
