@@ -14,6 +14,10 @@
   longer 250
   scr-t 50
   scr-d 80
+  ms-t 16
+  ms-at 1200
+  ms-min  18
+  ms-max 64
 )
 (defalias
   caps (tap-hold $tap-time 500 esc esc)
@@ -25,7 +29,7 @@
   h (tap-hold $tap-time $hold-time h esc)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rsft)
-  l (tap-hold $tap-time $longer l lmet)
+  l (tap-hold $tap-time $longer l (layer-while-held $layer-two))
   ; (tap-hold $tap-time $hold-time ; rctl)
   m (tap-hold $tap-time $hold-time m c)
   n (tap-hold $tap-time $hold-time n v)
@@ -35,7 +39,7 @@
   u (tap-hold $tap-time $hold-time u lbrc)
   i (tap-hold $tap-time $hold-time i rbrc)
   t (tap-hold $tap-time $longer t home)
-  e (tap-hold $tap-time $hold-time e esc)
+  e (tap-hold $tap-time $hold-time e e)
   y (tap-hold $tap-time $longer y end)
   b (tap-hold $tap-time $hold-time b bspc)
 
@@ -65,10 +69,25 @@
   y1 (tap-hold $tap-time $hold-time end end)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
 
-  s2 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
-  d2 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
-  f2 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
-  e2 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
+;; scroll wheel bindings
+;;  s2 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
+;;  d2 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
+;;  f2 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
+;;  e2 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
+
+;;  ms-t 16
+;;  ms-at 200
+;;  ms-min 8
+;;  ms-max 32
+
+;; mouse move bindings
+  s2 (tap-hold $tap-time $hold-time (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max))
+  d2 (tap-hold $tap-time $hold-time (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max))
+  f2 (tap-hold $tap-time $hold-time (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max))
+  e2 (tap-hold $tap-time $hold-time (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max))
+  j2 (tap-hold $tap-time $hold-time mltp mltp) 
+  k2 (tap-hold $tap-time $hold-time mrtp mrtp)
+
 )
 
 (deflayer base
@@ -84,7 +103,9 @@
     @caps
     @a 
     @s2 @d2 @f2 
-    @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i 
+    @g @h 
+    @j2 @k2 
+    @l @; @spc @o @p @m @n @r @u @y @t @b @i 
     @e2
     @ralt
 )
