@@ -1,17 +1,18 @@
+;; this is how you comment in this config
+
 ;; defsrc is still necessary
 (defcfg
   process-unmapped-keys yes
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e
+  caps a s d f g h j k l ; spc o p m n r u y t b i e ralt
 )
 (defvar
   tap-time 150
   hold-time 200
   longer 250
 )
-
 (defalias
   caps (tap-hold $tap-time 500 esc esc)
   a (tap-hold $tap-time $hold-time a lctl)
@@ -37,6 +38,7 @@
   b (tap-hold $tap-time $hold-time b bspc)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
+  ralt (tap-hold $tap-time $hold-time (layer-while-held $layer-two)(layer-while-held $layer-two))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
   a1 (tap-hold $tap-time $hold-time 1 lctl)
@@ -45,8 +47,8 @@
   f1 (tap-hold $tap-time $hold-time tab lalt)
   g1 (tap-hold $tap-time $hold-time ret ret)
   h1 (tap-hold $tap-time $hold-time left left)
-  j1 (tap-hold $tap-time $hold-time down lalt) 
-  k1 (tap-hold $tap-time $hold-time up lsft)
+  j1 (tap-hold $tap-time $hold-time down down) 
+  k1 (tap-hold $tap-time $hold-time up up)
   l1 (tap-hold $tap-time $longer rght rght)
   ;1 (tap-hold $tap-time $hold-time ; ;)
   m1 (tap-hold $tap-time $hold-time m c)
@@ -60,12 +62,31 @@
   e1 (tap-hold $tap-time $hold-time esc esc)
   y1 (tap-hold $tap-time $hold-time end end)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
+
+  a2 (tap-hold $tap-time $hold-time 1 1)
+  s2 (tap-hold $tap-time $longer 2 2)
+  d2 (tap-hold $tap-time $hold-time 3 3)
+  f2 (tap-hold $tap-time $hold-time 4 4)
+  g2 (tap-hold $tap-time $hold-time 5 5)
+  h2 (tap-hold $tap-time $hold-time 6 6)
+  j2 (tap-hold $tap-time $hold-time 7 7) 
+  k2 (tap-hold $tap-time $hold-time 8 8)
+  l2 (tap-hold $tap-time $longer 9 9)
+  ;2 (tap-hold $tap-time $hold-time 0 0)
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @ralt
 )
 
 (deflayer $layer-one
   @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1
+  @ralt
+)
+
+(deflayer $layer-two
+    @caps
+    @a2 @s2 @d2 @f2 @g2 @h2 @j2 @k2 @l2 @;2 
+    @spc @o @p @m @n @r @u @y @t @b @i @e
+    @ralt
 )
