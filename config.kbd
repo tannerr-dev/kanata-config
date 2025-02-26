@@ -14,10 +14,10 @@
   longer 250
   scr-t 50
   scr-d 80
-  ms-t 16
-  ms-at 1200
+  ms-t 22
+  ms-at 2000
   ms-min  18
-  ms-max 64
+  ms-max 34
 )
 (defalias
   caps (tap-hold $tap-time 500 esc esc)
@@ -44,7 +44,7 @@
   b (tap-hold $tap-time $hold-time b bspc)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
-  ralt (tap-hold $tap-time $hold-time (layer-while-held $layer-two)(layer-while-held $layer-two))
+  ralt (tap-hold $tap-time $hold-time (layer-while-held $layer-three)(layer-while-held $layer-three))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
   a1 (tap-hold $tap-time $hold-time 1 lctl)
@@ -88,6 +88,16 @@
   j2 (tap-hold $tap-time $hold-time mltp mltp) 
   k2 (tap-hold $tap-time $hold-time mrtp mrtp)
 
+  a3 (tap-hold $tap-time $hold-time 1 1)
+  s3 (tap-hold $tap-time $longer 2 2)
+  d3 (tap-hold $tap-time $hold-time 3 3)
+  f3 (tap-hold $tap-time $hold-time 4 4)
+  g3 (tap-hold $tap-time $hold-time 5 5)
+  h3 (tap-hold $tap-time $hold-time 6 6)
+  j3 (tap-hold $tap-time $hold-time 7 7) 
+  k3 (tap-hold $tap-time $hold-time 8 8)
+  l3 (tap-hold $tap-time $longer 9 9)
+  ;3 (tap-hold $tap-time $hold-time 0 0)
 )
 
 (deflayer base
@@ -106,6 +116,13 @@
     @g @h 
     @j2 @k2 
     @l @; @spc @o @p @m @n @r @u @y @t @b @i 
+    @e2
+    @ralt
+)
+(deflayer $layer-three
+    @caps
+    @a3 @s3 @d3 @f3 @g3 @h3 @j3 @k3 @l3 @;3 
+    @spc @o @p @m @n @r @u @y @t @b @i 
     @e2
     @ralt
 )
