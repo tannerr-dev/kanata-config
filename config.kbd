@@ -14,10 +14,10 @@
   longer 250
   scr-t 50
   scr-d 80
-  ms-t 32
+  ms-t 40
   ms-at 2000
-  ms-min 24
-  ms-max 34
+  ms-min 28
+  ms-max 72
 )
 (defalias
   caps (tap-hold $tap-time 500 esc esc)
