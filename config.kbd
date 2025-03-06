@@ -20,7 +20,7 @@
   ms-max 72
 )
 (defalias
-  caps (tap-hold $tap-time 500 esc esc)
+  caps (tap-hold $tap-time 500 esc caps)
   a (tap-hold $tap-time $hold-time a lctl)
   s (tap-hold $tap-time $longer s lmet)
   d (tap-hold $tap-time $hold-time d rsft)
@@ -36,8 +36,8 @@
   o (tap-hold $tap-time $hold-time o min)
   p (tap-hold $tap-time $hold-time p eql)
   r (tap-hold $tap-time $hold-time r r)
-  u (tap-hold $tap-time $hold-time u lbrc)
-  i (tap-hold $tap-time $hold-time i rbrc)
+  u (tap-hold $tap-time $longer u lbrc)
+  i (tap-hold $tap-time $longer i rbrc)
   t (tap-hold $tap-time $longer t home)
   e (tap-hold $tap-time $hold-time e esc)
   y (tap-hold $tap-time $longer y end)
