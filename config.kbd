@@ -14,9 +14,9 @@
   longer 250
   scr-t 50
   scr-d 80
-  ms-t 22
+  ms-t 32
   ms-at 2000
-  ms-min  18
+  ms-min 24
   ms-max 34
 )
 (defalias
@@ -39,7 +39,7 @@
   u (tap-hold $tap-time $hold-time u lbrc)
   i (tap-hold $tap-time $hold-time i rbrc)
   t (tap-hold $tap-time $longer t home)
-  e (tap-hold $tap-time $hold-time e e)
+  e (tap-hold $tap-time $hold-time e esc)
   y (tap-hold $tap-time $longer y end)
   b (tap-hold $tap-time $hold-time b bspc)
 
