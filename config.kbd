@@ -6,7 +6,7 @@
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e ralt
+  caps a s d f g h j k l ; spc o p m n r u y t b i e ralt w
 )
 (defvar
   tap-time 150
@@ -42,6 +42,7 @@
   e (tap-hold $tap-time $hold-time e esc)
   y (tap-hold $tap-time $longer y end)
   b (tap-hold $tap-time $hold-time b bspc)
+  w (tap-hold $tap-time $hold-time w w)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   ralt (tap-hold $tap-time $hold-time (layer-while-held $layer-three)(layer-while-held $layer-three))
@@ -68,17 +69,15 @@
   e1 (tap-hold $tap-time $hold-time esc esc)
   y1 (tap-hold $tap-time $hold-time end end)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
+  w1 (tap-hold $tap-time $hold-time w w)
 
 ;; scroll wheel bindings
-;;  s2 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
-;;  d2 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
-;;  f2 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
-;;  e2 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
+  w2 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
+  r2 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
+  g2 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
+  a2 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
 
-;;  ms-t 16
-;;  ms-at 200
-;;  ms-min 8
-;;  ms-max 32
+
 
 ;; mouse move bindings
   s2 (tap-hold $tap-time $hold-time (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max))
@@ -101,28 +100,33 @@
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @ralt
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @ralt @w
 )
 
 (deflayer $layer-one
   @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1
-  @ralt
+  @ralt @w1
 )
 
+;; mouse layer
 (deflayer $layer-two
     @caps
-    @a 
-    @s2 @d2 @f2 
-    @g @h 
+    @a2 @s2 @d2 @f2 @g2
+    @h 
     @j2 @k2 
-    @l @; @spc @o @p @m @n @r @u @y @t @b @i 
+    @l @; @spc @o @p @m @n 
+    @r2
+    @u @y @t @b @i 
     @e2
     @ralt
+    @w2
 )
+
+;; number layer
 (deflayer $layer-three
     @caps
     @a3 @s3 @d3 @f3 @g3 @h3 @j3 @k3 @l3 @;3 
     @spc @o @p @m @n @r @u @y @t @b @i 
     @e2
-    @ralt
+    @ralt @w
 )
