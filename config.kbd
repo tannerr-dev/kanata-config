@@ -40,9 +40,10 @@
   y (tap-hold $tap-time $longer y end)
   b (tap-hold $tap-time $hold-time b bspc)
   w (tap-hold $tap-time $hold-time w w)
+  x (tap-hold $tap-time $hold-time x (layer-while-held $layer-three))
 
   , (tap-hold $tap-time $hold-time , ,)
-  . (tap-hold $tap-time $hold-time (layer-while-held $layer-three)(layer-while-held $layer-three))
+  . (tap-hold $tap-time $hold-time . (layer-while-held $layer-three))
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
@@ -85,8 +86,6 @@
   e2 (tap-hold $tap-time $hold-time (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max))
   j2 (tap-hold $tap-time $hold-time mltp mltp) 
   k2 (tap-hold $tap-time $hold-time mrtp mrtp)
-  u2 (tap-hold $tap-time $longer tab tab)
-  i2 (tap-hold $tap-time $longer ralt ralt)
 
   a3 (tap-hold $tap-time $hold-time 1 1)
   s3 (tap-hold $tap-time $longer 2 2)
@@ -98,20 +97,21 @@
   k3 (tap-hold $tap-time $hold-time 8 8)
   l3 (tap-hold $tap-time $longer 9 9)
   ;3 (tap-hold $tap-time $hold-time 0 0)
+  ,3 (tap-hold $tap-time $hold-time , tab)
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @, @.
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @, @. @x
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e  w , .
+  caps a s d f g h j k l ; spc o p m n r u y t b i e  w , . x
 )
 
 (deflayer $layer-one
   @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1
   @w1
-    @, @.
+    @, @. @x
 )
 
 (deflayer $layer-two
@@ -121,12 +121,12 @@
     @j2 @k2 
     @l @; @spc @o @p @m @n 
     @r2
-    @u2
+    @u
     @y @t @b 
-    @i2
+    @i
     @e2
     @w2
-    @, @.
+    @, @. @x
 )
 
 (deflayer $layer-three
@@ -138,5 +138,6 @@
     @i
     @e2
     @w
-    @, @.
+    @,3 
+    @. @x
 )
