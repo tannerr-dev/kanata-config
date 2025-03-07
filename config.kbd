@@ -5,9 +5,6 @@
   process-unmapped-keys yes
 )
 
-(defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e ralt w
-)
 (defvar
   tap-time 150
   hold-time 200
@@ -24,10 +21,10 @@
   a (tap-hold $tap-time $hold-time a lctl)
   s (tap-hold $tap-time $longer s lmet)
   d (tap-hold $tap-time $hold-time d rsft)
-  f (tap-hold $tap-time $hold-time f tab)
+  f (tap-hold $tap-time $hold-time f lalt)
   g (tap-hold $tap-time $hold-time g ret)
   h (tap-hold $tap-time $hold-time h esc)
-  j (tap-hold $tap-time $hold-time j ralt)
+  j (tap-hold $tap-time $hold-time j rctl)
   k (tap-hold $tap-time $hold-time k rsft)
   l (tap-hold $tap-time $longer l (layer-while-held $layer-two))
   ; (tap-hold $tap-time $hold-time ; rctl)
@@ -44,14 +41,16 @@
   b (tap-hold $tap-time $hold-time b bspc)
   w (tap-hold $tap-time $hold-time w w)
 
+  , (tap-hold $tap-time $hold-time , ,)
+  . (tap-hold $tap-time $hold-time (layer-while-held $layer-three)(layer-while-held $layer-three))
+
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
-  ralt (tap-hold $tap-time $hold-time (layer-while-held $layer-three)(layer-while-held $layer-three))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
-  a1 (tap-hold $tap-time $hold-time 1 lctl)
-  s1 (tap-hold $tap-time $longer 2 lmet)
-  d1 (tap-hold $tap-time $hold-time 3 rsft)
-  f1 (tap-hold $tap-time $hold-time tab lalt)
+  a1 (tap-hold $tap-time $hold-time lctl lctl)
+  s1 (tap-hold $tap-time $longer lmet lmet)
+  d1 (tap-hold $tap-time $hold-time rsft rsft)
+  f1 (tap-hold $tap-time $hold-time ; lalt)
   g1 (tap-hold $tap-time $hold-time ret ret)
   h1 (tap-hold $tap-time $hold-time left left)
   j1 (tap-hold $tap-time $hold-time down down) 
@@ -86,6 +85,8 @@
   e2 (tap-hold $tap-time $hold-time (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max))
   j2 (tap-hold $tap-time $hold-time mltp mltp) 
   k2 (tap-hold $tap-time $hold-time mrtp mrtp)
+  u2 (tap-hold $tap-time $longer tab tab)
+  i2 (tap-hold $tap-time $longer ralt ralt)
 
   a3 (tap-hold $tap-time $hold-time 1 1)
   s3 (tap-hold $tap-time $longer 2 2)
@@ -100,15 +101,19 @@
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @ralt @w
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @, @.
+)
+
+(defsrc
+  caps a s d f g h j k l ; spc o p m n r u y t b i e  w , .
 )
 
 (deflayer $layer-one
   @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1
-  @ralt @w1
+  @w1
+    @, @.
 )
 
-;; mouse layer
 (deflayer $layer-two
     @caps
     @a2 @s2 @d2 @f2 @g2
@@ -116,17 +121,22 @@
     @j2 @k2 
     @l @; @spc @o @p @m @n 
     @r2
-    @u @y @t @b @i 
+    @u2
+    @y @t @b 
+    @i2
     @e2
-    @ralt
     @w2
+    @, @.
 )
 
-;; number layer
 (deflayer $layer-three
     @caps
     @a3 @s3 @d3 @f3 @g3 @h3 @j3 @k3 @l3 @;3 
-    @spc @o @p @m @n @r @u @y @t @b @i 
+    @spc @o @p @m @n @r 
+    @u
+    @y @t @b 
+    @i
     @e2
-    @ralt @w
+    @w
+    @, @.
 )
