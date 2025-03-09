@@ -48,9 +48,9 @@
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
-  a1 (tap-hold $tap-time $hold-time lctl lctl)
+  a1 (tap-hold $tap-time $hold-time lsft lsft)
   s1 (tap-hold $tap-time $longer lmet lmet)
-  d1 (tap-hold $tap-time $hold-time rsft rsft)
+  d1 (tap-hold $tap-time $hold-time lctl lctl)
   f1 (tap-hold $tap-time $hold-time tab tab)
   g1 (tap-hold $tap-time $hold-time ret ret)
   h1 (tap-hold $tap-time $hold-time left left)
