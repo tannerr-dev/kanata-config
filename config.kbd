@@ -41,7 +41,7 @@
   b (tap-hold $tap-time $hold-time b bspc)
   w (tap-hold $tap-time $hold-time w w)
   x (tap-hold $tap-time $hold-time x (layer-while-held $layer-three))
-  ' (tap-hold $tap-time $hold-time x (layer-while-held $layer-three))
+  ' (tap-hold $tap-time $hold-time ' (layer-while-held $layer-three))
 
   , (tap-hold $tap-time $hold-time , ,)
   . (tap-hold $tap-time $hold-time . (layer-while-held $layer-three))
