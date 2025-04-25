@@ -23,7 +23,7 @@
   d (tap-hold $tap-time $hold-time d lctl)
   f (tap-hold $tap-time $hold-time f tab)
   g (tap-hold $tap-time $hold-time g ret)
-  h (tap-hold $tap-time $hold-time h esc)
+  h (tap-hold $tap-time $hold-time h h)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rctl)
   l (tap-hold $tap-time $longer l (layer-while-held $layer-two))
@@ -41,6 +41,7 @@
   b (tap-hold $tap-time $hold-time b bspc)
   w (tap-hold $tap-time $hold-time w w)
   x (tap-hold $tap-time $hold-time x (layer-while-held $layer-three))
+  ' (tap-hold $tap-time $hold-time x (layer-while-held $layer-three))
 
   , (tap-hold $tap-time $hold-time , ,)
   . (tap-hold $tap-time $hold-time . (layer-while-held $layer-three))
@@ -48,9 +49,12 @@
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
-  a1 (tap-hold $tap-time $hold-time lsft lsft)
-  s1 (tap-hold $tap-time $longer lmet lmet)
-  d1 (tap-hold $tap-time $hold-time lctl lctl)
+;;  a1 (tap-hold $tap-time $hold-time lsft lsft)
+;;  s1 (tap-hold $tap-time $longer lmet lmet)
+;;  d1 (tap-hold $tap-time $hold-time lctl lctl)
+  a1 (tap-hold $tap-time $hold-time 1 lsft)
+  s1 (tap-hold $tap-time $longer 2 lmet)
+  d1 (tap-hold $tap-time $hold-time 3 lctl)
   f1 (tap-hold $tap-time $hold-time tab tab)
   g1 (tap-hold $tap-time $hold-time ret ret)
   h1 (tap-hold $tap-time $hold-time left left)
@@ -101,17 +105,17 @@
 )
 
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @, @. @x
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @, @. @x @'
 )
 
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e  w , . x
+  caps a s d f g h j k l ; spc o p m n r u y t b i e  w , . x '
 )
 
 (deflayer $layer-one
   @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1
   @w1
-    @, @. @x
+    @, @. @x @'
 )
 
 (deflayer $layer-two
@@ -126,12 +130,13 @@
     @i
     @e2
     @w2
-    @, @. @x
+    @, @. @x @'
 )
 
 (deflayer $layer-three
     @caps
-    @a3 @s3 @d3 @f3 @g3 @h3 @j3 @k3 @l3 @;3 
+    @a3 @s3 @d3 @f3 @g3 
+    @h @j @k @l @; 
     @spc @o @p @m @n @r 
     @u
     @y @t @b 
@@ -139,5 +144,5 @@
     @e2
     @w
     @,3 
-    @. @x
+    @. @x @'
 )
