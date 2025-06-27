@@ -12,16 +12,16 @@
   scr-t 50
   scr-d 80
   ms-t 40
-  ms-at 2000
+  ms-at 1000
   ms-min 28
-  ms-max 72
+  ms-max 92
 )
 (defalias
   caps (tap-hold $tap-time 500 esc caps)
   a (tap-hold $tap-time $hold-time a lsft)
   s (tap-hold $tap-time $longer s lmet)
   d (tap-hold $tap-time $hold-time d lctl)
-  f (tap-hold $tap-time $hold-time f f)
+  f (tap-hold $tap-time $hold-time f lalt)
   g (tap-hold $tap-time $hold-time g ret)
   h (tap-hold $tap-time $hold-time h ret)
   j (tap-hold $tap-time $hold-time j ralt)
