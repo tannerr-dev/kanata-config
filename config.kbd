@@ -7,18 +7,18 @@
 
 ;; declare keys listeners
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e  w /
+  caps a s d f g h j k l ; spc o p m n r u y t b i e  w 
 )
 
 
 ;;base layer
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @/
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w
 )
 
 ;;main layer one
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @w1 @/
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @w1
 )
 
 ;;mouse layer
@@ -33,14 +33,15 @@
     @y @t @b 
     @i
     @e2 @w2
-    @/
 )
 
 ;; declare variables
 (defvar
   tap-time 150
   hold-time 200
-  longer 250
+  long-time 250
+
+  ;;mouse
   scr-t 50
   scr-d 80
   ms-t 40
@@ -51,47 +52,46 @@
 
 ;; key mappings
 (defalias
-  caps (tap-hold $tap-time 500 caps (layer-while-held $layer-two))
+  caps (tap-hold $tap-time 500 esc (layer-while-held $layer-two))
   a (tap-hold $tap-time $hold-time a lsft)
-  s (tap-hold $tap-time $longer s lmet)
+  s (tap-hold $tap-time $long-time s lmet)
   d (tap-hold $tap-time $hold-time d lctl)
   f (tap-hold $tap-time $hold-time f lalt)
   g (tap-hold $tap-time $hold-time g ret)
   h (tap-hold $tap-time $hold-time h ret)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rctl)
-;;  l (tap-hold $tap-time $longer l (layer-while-held $layer-two))
-  l (tap-hold $tap-time $longer l (layer-while-held $layer-one))
+;;  l (tap-hold $tap-time $long-time l (layer-while-held $layer-two))
+  l (tap-hold $tap-time $long-time l (layer-while-held $layer-one))
   ; (tap-hold $tap-time $hold-time ; rsft)
   m (tap-hold $tap-time $hold-time m c)
   n (tap-hold $tap-time $hold-time n v)
   o (tap-hold $tap-time $hold-time o min)
   p (tap-hold $tap-time $hold-time p eql)
   r (tap-hold $tap-time $hold-time r r)
-  u (tap-hold $tap-time $longer u lbrc)
-  i (tap-hold $tap-time $longer i rbrc)
-  t (tap-hold $tap-time $longer t home)
+  u (tap-hold $tap-time $long-time u lbrc)
+  i (tap-hold $tap-time $long-time i rbrc)
+  t (tap-hold $tap-time $long-time t home)
   e (tap-hold $tap-time $hold-time e esc)
-  y (tap-hold $tap-time $longer y end)
+  y (tap-hold $tap-time $long-time y end)
   b (tap-hold $tap-time $hold-time b bspc)
   w (tap-hold $tap-time $hold-time w w)
-  / (tap-hold $tap-time $hold-time x (layer-while-held $layer-two))
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
 
   caps1 (tap-hold $tap-time 500 bspc bspc )
 ;;  a1 (tap-hold $tap-time $hold-time lsft lsft)
-;;  s1 (tap-hold $tap-time $longer lmet lmet)
+;;  s1 (tap-hold $tap-time $long-time lmet lmet)
 ;;  d1 (tap-hold $tap-time $hold-time lctl lctl)
   a1 (tap-hold $tap-time $hold-time 1 lsft)
-  s1 (tap-hold $tap-time $longer 2 lmet)
+  s1 (tap-hold $tap-time $long-time 2 lmet)
   d1 (tap-hold $tap-time $hold-time 3 lctl)
   f1 (tap-hold $tap-time $hold-time 4 4)
   g1 (tap-hold $tap-time $hold-time 5 ret)
   h1 (tap-hold $tap-time $hold-time left left)
   j1 (tap-hold $tap-time $hold-time down down) 
   k1 (tap-hold $tap-time $hold-time up up)
-  l1 (tap-hold $tap-time $longer rght rght)
+  l1 (tap-hold $tap-time $long-time rght rght)
   ;1 (tap-hold $tap-time $hold-time ; ;)
   m1 (tap-hold $tap-time $hold-time m c)
   n1 (tap-hold $tap-time $hold-time del del)
