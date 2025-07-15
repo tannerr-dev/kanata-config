@@ -22,18 +22,17 @@
 )
 
 ;;mouse layer, 
-;; TO DO swap to wasd at 
 (deflayer $layer-two
-    @e2 @w2
-    @a2 @s2 @d2 @f2 @g2
-    @j2 @k2 
-    @r2
     @caps
+    @a2 @s2 @d2 @f2 @g2
     @h 
+    @j2 @k2 
     @l @; @spc @o @p @m @n 
+    @r2
     @u
     @y @t @b 
     @i
+    @e2 @w2
 )
 
 ;; declare variables
@@ -62,8 +61,7 @@
   h (tap-hold $tap-time $hold-time h ret)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rctl)
-;;  l (tap-hold $tap-time $long-time l (layer-while-held $layer-two))
-  l (tap-hold $tap-time $long-time l (layer-while-held $layer-one))
+  l (tap-hold $tap-time $long-time l (layer-while-held $layer-two))
   ; (tap-hold $tap-time $hold-time ; rsft)
   m (tap-hold $tap-time $hold-time m c)
   n (tap-hold $tap-time $hold-time n v)
