@@ -77,7 +77,7 @@
   w (tap-hold $tap-time $hold-time w w)
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
-  spc1 (tap-hold $tap-time $hold-time bspc bspc))
+  spc1 (tap-hold $tap-time $hold-time bspc bspc)
 
   caps1 (tap-hold $tap-time 500 tab caps)
 ;;  a1 (tap-hold $tap-time $hold-time lsft lsft)
