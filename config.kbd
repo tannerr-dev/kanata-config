@@ -52,7 +52,7 @@
 
 ;; key mappings
 (defalias
-  caps (tap-hold $tap-time 500 esc (layer-while-held $layer-two))
+  caps (tap-hold $tap-time 500 ret (layer-while-held $layer-two))
   a (tap-hold $tap-time $hold-time a lsft)
   s (tap-hold $tap-time $long-time s lmet)
   d (tap-hold $tap-time $hold-time d lctl)
@@ -79,7 +79,7 @@
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   spc1 (tap-hold $tap-time $hold-time bspc bspc)
 
-  caps1 (tap-hold $tap-time 500 tab caps)
+  caps1 (tap-hold $tap-time 500 ret caps)
 ;;  a1 (tap-hold $tap-time $hold-time lsft lsft)
 ;;  s1 (tap-hold $tap-time $long-time lmet lmet)
 ;;  d1 (tap-hold $tap-time $hold-time lctl lctl)
