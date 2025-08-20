@@ -7,32 +7,39 @@
 
 ;; declare keys listeners
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e  w 
+  caps a s d f g h j k l ; spc o p m n r u y t b i e w lsft rsft 
 )
 
 
 ;;base layer
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @lsft @rsft
 )
 
 ;;main layer one
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc1 @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @w1
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc1 @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @w1 @lsft @rsft
+)
+;; layer two, num layer
+(deflayer $layer-two
+    @caps2 @a2 @s2 @d2 @f2 @g2 @h2 @j2 @k2 @l2 @;2
+    @spc @o @p @m @n 
+    @r
+    @u @y @t @b @i
+    @e @w @lsft @rsft
 )
 
-;;mouse layer, 
-(deflayer $layer-two
+;;mouse layer
+(deflayer $layer-three
     @caps
-    @a2 @s2 @d2 @f2 @g2
-    @h2 
-    @j2 @k2 
+    @a3 @s3 @d3 @f3 @g3 @h3 @j3 @k3 
     @l @; @spc @o @p @m @n 
-    @r2
+    @r3
     @u
     @y @t @b 
     @i
-    @e2 @w2
+    @e3 @w3
+    @lsft @rsft
 )
 
 ;; declare variables
@@ -55,6 +62,10 @@
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   spc1 (tap-hold $tap-time $hold-time bspc bspc)
+  lsft (tap-hold $tap-time $hold-time lsft lsft )
+  rsft (tap-hold $tap-time $hold-time rsft rsft )
+  ;;lsft (tap-hold $tap-time $hold-time lsft (layer-while-held $layer-two))
+  ;;rsft (tap-hold $tap-time $hold-time rsft (layer-while-held $layer-two))
 
   caps (tap-hold $tap-time 500 ret (layer-while-held $layer-two))
   a (tap-hold $tap-time $hold-time a lsft)
@@ -81,9 +92,7 @@
   w (tap-hold $tap-time $hold-time w w)
 
   caps1 (tap-hold $tap-time 500 ret caps)
-;;  a1 (tap-hold $tap-time $hold-time lsft lsft)
-;;  s1 (tap-hold $tap-time $long-time lmet lmet)
-;;  d1 (tap-hold $tap-time $hold-time lctl lctl)
+
   a1 (tap-hold $tap-time $hold-time 1 lsft)
   s1 (tap-hold $tap-time $long-time 2 lmet)
   d1 (tap-hold $tap-time $hold-time 3 lctl)
@@ -107,19 +116,32 @@
   b1 (tap-hold $tap-time $hold-time bspc bspc)
   w1 (tap-hold $tap-time $hold-time w w)
 
+;; layer two
+  caps2 (tap-hold $tap-time $hold-time ` `)
+  a2 (tap-hold $tap-time $hold-time 1 1)
+  s2 (tap-hold $tap-time $long-time 2 2)
+  d2 (tap-hold $tap-time $hold-time 3 3)
+  f2 (tap-hold $tap-time $hold-time 4 4)
+  g2 (tap-hold $tap-time $hold-time 5 5)
+  h2 (tap-hold $tap-time $hold-time 6 6)
+  j2 (tap-hold $tap-time $hold-time 7 7) 
+  k2 (tap-hold $tap-time $hold-time 8 8)
+  l2 (tap-hold $tap-time $long-time 9 9)
+  ;2 (tap-hold $tap-time $hold-time 0 0)
+
 ;; mouse move bindings
-  s2 (tap-hold $tap-time $hold-time (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max))
-  d2 (tap-hold $tap-time $hold-time (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max))
-  f2 (tap-hold $tap-time $hold-time (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max))
-  e2 (tap-hold $tap-time $hold-time (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max))
-  j2 (tap-hold $tap-time $hold-time mlft mlft)
-  k2 (tap-hold $tap-time $hold-time mrtp mrtp)
-  h2 (tap-hold $tap-time $hold-time mltp mltp) 
+  s3 (tap-hold $tap-time $hold-time (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-left $ms-t $ms-at $ms-min $ms-max))
+  d3 (tap-hold $tap-time $hold-time (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-down $ms-t $ms-at $ms-min $ms-max))
+  f3 (tap-hold $tap-time $hold-time (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-right $ms-t $ms-at $ms-min $ms-max))
+  e3 (tap-hold $tap-time $hold-time (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max) (movemouse-accel-up $ms-t $ms-at $ms-min $ms-max))
+  j3 (tap-hold $tap-time $hold-time mlft mlft)
+  k3 (tap-hold $tap-time $hold-time mrtp mrtp)
+  h3 (tap-hold $tap-time $hold-time mltp mltp) 
 
 ;; scroll wheel bindings
-  w2 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
-  r2 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
-  g2 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
-  a2 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
+  w3 (tap-hold $tap-time $hold-time (mwheel-up $scr-t $scr-d) (mwheel-up $scr-t $scr-d))
+  r3 (tap-hold $tap-time $hold-time (mwheel-down $scr-t $scr-d) (mwheel-down $scr-t $scr-d))
+  g3 (tap-hold $tap-time $hold-time  (mwheel-left $scr-t $scr-d) (mwheel-left $scr-t $scr-d))
+  a3 (tap-hold $tap-time $hold-time (mwheel-right $scr-t $scr-d) (mwheel-right $scr-t $scr-d))
 
 )
