@@ -26,7 +26,8 @@
     @spc @o @p @m @n 
     @r
     @u @y @t @b @i
-    @e @w @lsft @rsft
+    @e @w 
+    @lsft2 @rsft2
 )
 
 ;;mouse layer
@@ -62,10 +63,12 @@
 
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   spc1 (tap-hold $tap-time $hold-time bspc bspc)
-  lsft (tap-hold $tap-time $hold-time lsft lsft )
-  rsft (tap-hold $tap-time $hold-time rsft rsft )
-  ;;lsft (tap-hold $tap-time $hold-time lsft (layer-while-held $layer-two))
-  ;;rsft (tap-hold $tap-time $hold-time rsft (layer-while-held $layer-two))
+  ;;lsft (tap-hold $tap-time $hold-time lsft lsft )
+  ;;rsft (tap-hold $tap-time $hold-time rsft rsft )
+  lsft (tap-hold $tap-time $hold-time (layer-switch $layer-two) lsft)
+  rsft (tap-hold $tap-time $hold-time (layer-switch $layer-two) rsft)
+  lsft2 (tap-hold $tap-time $hold-time (layer-switch base) lsft)
+  rsft2 (tap-hold $tap-time $hold-time (layer-switch base) rsft)
 
   caps (tap-hold $tap-time 500 ret (layer-while-held $layer-two))
   a (tap-hold $tap-time $hold-time a lsft)
