@@ -7,18 +7,18 @@
 
 ;; declare keys listeners
 (defsrc
-  caps a s d f g h j k l ; spc o p m n r u y t b i e w lsft rsft 
+  caps a s d f g h j k l ; spc o p m n r u y t b i e lsft rsft q w
 )
 
 
 ;;base layer
 (deflayer base
-  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @w @lsft @rsft
+  @caps @a @s @d @f @g @h @j @k @l @; @spc @o @p @m @n @r @u @y @t @b @i @e @lsft @rsft @q @w
 )
 
 ;;main layer one
 (deflayer $layer-one
-  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc1 @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @w1 @lsft @rsft
+  @caps1 @a1 @s1 @d1 @f1 @g1 @h1 @j1 @k1 @l1 @;1 @spc1 @o1 @p1 @m1 @n1 @r1 @u1 @y1 @t1 @b1 @i1 @e1 @lsft @rsft @q1 @w1
 )
 ;; layer two, num layer
 (deflayer $layer-two
@@ -26,8 +26,9 @@
     @spc @o @p @m @n 
     @r
     @u @y @t @b @i
-    @e @w 
+    @e 
     @lsft2 @rsft2
+    @q @w
 )
 
 ;;mouse layer
@@ -39,8 +40,10 @@
     @u
     @y @t @b 
     @i
-    @e3 @w3
+    @e3
     @lsft @rsft
+    @q
+    @w3
 )
 
 ;; declare variables
@@ -60,7 +63,6 @@
 
 ;; key mappings
 (defalias
-
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   spc1 (tap-hold $tap-time $hold-time bspc bspc)
   ;;lsft (tap-hold $tap-time $hold-time lsft lsft )
@@ -92,7 +94,8 @@
   e (tap-hold $tap-time $hold-time e esc)
   y (tap-hold $tap-time $long-time y end)
   b (tap-hold $tap-time $hold-time b bspc)
-  w (tap-hold $tap-time $hold-time w w)
+  q (tap-hold $tap-time $hold-time q 9)
+  w (tap-hold $tap-time $hold-time w 0)
 
   caps1 (tap-hold $tap-time 500 ret caps)
 
@@ -117,7 +120,8 @@
   e1 (tap-hold $tap-time $hold-time esc esc)
   y1 (tap-hold $tap-time $hold-time end end)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
-  w1 (tap-hold $tap-time $hold-time w w)
+  q1 (tap-hold $tap-time $hold-time 9 9)
+  w1 (tap-hold $tap-time $hold-time 0 0)
 
 ;; layer two
   caps2 (tap-hold $tap-time $hold-time ` `)
