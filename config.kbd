@@ -65,10 +65,14 @@
 (defalias
   spc (tap-hold $tap-time $hold-time spc (layer-while-held $layer-one))
   spc1 (tap-hold $tap-time $hold-time bspc bspc)
-  lsft (tap-hold $tap-time $hold-time lsft lsft )
-  rsft (tap-hold $tap-time $hold-time rsft rsft )
-  lsft2 (tap-hold $tap-time $hold-time lsft lsft )
-  rsft2 (tap-hold $tap-time $hold-time rsft rsft )
+
+  ;;lsft (tap-hold $tap-time $hold-time lsft (layer-while-held $layer-two))
+  ;;rsft (tap-hold $tap-time $hold-time rsft (layer-while-held $layer-two))
+  lsft2 (tap-hold $tap-time $hold-time lsft lsft)
+  rsft2 (tap-hold $tap-time $hold-time rsft rsft)
+
+  lsft (tap-hold $tap-time $hold-time lsft lsft)
+  rsft (tap-hold $tap-time $hold-time rsft rsft)
   ;;lsft (tap-hold $tap-time $hold-time (layer-switch $layer-two) lsft)
   ;;rsft (tap-hold $tap-time $hold-time (layer-switch $layer-two) rsft)
   ;;lsft2 (tap-hold $tap-time $hold-time (layer-switch base) lsft)
@@ -80,7 +84,7 @@
   d (tap-hold $tap-time $hold-time d lctl)
   f (tap-hold $tap-time $hold-time f lalt)
   g (tap-hold $tap-time $hold-time g ret)
-  h (tap-hold $tap-time $hold-time h ret)
+  h (tap-hold $tap-time $hold-time h rsft)
   j (tap-hold $tap-time $hold-time j ralt)
   k (tap-hold $tap-time $hold-time k rctl)
   l (tap-hold $tap-time $long-time l (layer-while-held $layer-one))
