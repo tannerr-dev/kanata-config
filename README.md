@@ -2,6 +2,7 @@
 ---
 
 this is my config for the keyboard remapping sofware [kanata](https://github.com/jtroo/kanata?tab=readme-ov-file)
+ps. [this page of code also shows all the names for keys you may need](https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs)
 
 Goal was to move all the most used keys towards the middle of the keyboard instead of the outside, also to utilize the space bar as a layer key was a gamechanger. 
 
