@@ -20,8 +20,7 @@
   ;;lsft2 (tap-hold $tap-time $hold-time (layer-switch base) lsft)
   ;;rsft2 (tap-hold $tap-time $hold-time (layer-switch base) rsft)
 
-  ;;caps (tap-hold $tap-time 500 ret (layer-while-held $layer-two))
-  caps (tap-hold $tap-time 400 ret caps)
+  caps (tap-hold $tap-time 500 ret (layer-while-held $layer-two))
   a (tap-hold $tap-time $hold-time a lsft)
   s (tap-hold $tap-time $long-time s lmet)
   d (tap-hold $tap-time $hold-time d lctl)
@@ -70,7 +69,6 @@
   e1 (tap-hold $tap-time $hold-time esc esc)
   y1 (tap-hold $tap-time $hold-time end end)
   b1 (tap-hold $tap-time $hold-time bspc bspc)
-  ;;b1 (tap-hold $tap-time $hold-time b b)
   q1 (tap-hold $tap-time $hold-time q 9)
   w1 (tap-hold $tap-time $hold-time w 0)
   '1 (tap-hold $tap-time $hold-time tab tab)
